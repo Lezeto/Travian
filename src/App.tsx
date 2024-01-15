@@ -55,10 +55,10 @@ const App: React.FC = () => {
   setButtonsPressed((prevState) => {
     const newButtonsPressed = { ...prevState };
     newButtonsPressed[variable as keyof typeof newButtonsPressed] += 1;
-    setMadera((prevMadera) => prevMadera - 100 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
-    setBarro((prevBarro) => prevBarro - 100 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
-    setHierro((prevHierro) => prevHierro - 100 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
-    setCereal((prevCereal) => prevCereal - 100 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
+    setMadera((prevMadera) => prevMadera - 50/1.5 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
+    setBarro((prevBarro) => prevBarro - 50/1.5 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
+    setHierro((prevHierro) => prevHierro - 50/1.5 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
+    setCereal((prevCereal) => prevCereal - 50/1.5 * Math.pow(1.5, newButtonsPressed[variable as keyof typeof newButtonsPressed]));
     return newButtonsPressed;
   });
  };
@@ -85,33 +85,33 @@ const App: React.FC = () => {
   <img src={MaderaImg} alt="Madera"/>
   <h1>Madera</h1>
   <p>{3600*Math.pow(1.5, buttonsPressed.Madera)} /h</p>
-  <p>{Math.floor(Madera)}</p>
-  <p>Siguiente Nivel: {150*Math.pow(1.5, buttonsPressed.Madera)}</p>
-  <button onClick={() => handleButtonClick('Madera')} disabled={Cereal < 150 * Math.pow(1.5, buttonsPressed.Madera) || Madera < 100 * Math.pow(1.5, buttonsPressed.Madera) || Barro < 100 * Math.pow(1.5, buttonsPressed.Madera) || Hierro < 100 * Math.pow(1.5, buttonsPressed.Madera)}> x1.5</button>
+  <h3>{Math.floor(Madera)}</h3>
+  <p>Siguiente Nivel: {Math.floor(50*Math.pow(1.5, buttonsPressed.Madera))}</p>
+  <button onClick={() => handleButtonClick('Madera')} disabled={Cereal < 50 * Math.pow(1.5, buttonsPressed.Madera) || Madera < 50 * Math.pow(1.5, buttonsPressed.Madera) || Barro < 50 * Math.pow(1.5, buttonsPressed.Madera) || Hierro < 50 * Math.pow(1.5, buttonsPressed.Madera)}> x1.5</button>
  </div>
  <div>
   <img src={BarroImg} alt="Barro"/>
   <h1>Barro</h1>
   <p>{3600*Math.pow(1.5, buttonsPressed.Barro)} /h</p>
-  <p>{Math.floor(Barro)}</p>
-  <p>Siguiente Nivel: {150*Math.pow(1.5, buttonsPressed.Barro)}</p>
-  <button onClick={() => handleButtonClick('Barro')} disabled={Cereal < 150 * Math.pow(1.5, buttonsPressed.Barro) || Madera < 100 * Math.pow(1.5, buttonsPressed.Barro) || Barro < 100 * Math.pow(1.5, buttonsPressed.Barro) || Hierro < 100 * Math.pow(1.5, buttonsPressed.Barro)}> x1.5</button>
+  <h3>{Math.floor(Barro)}</h3>
+  <p>Siguiente Nivel: {Math.floor(50*Math.pow(1.5, buttonsPressed.Barro))}</p>
+  <button onClick={() => handleButtonClick('Barro')} disabled={Cereal < 50 * Math.pow(1.5, buttonsPressed.Barro) || Madera < 50 * Math.pow(1.5, buttonsPressed.Barro) || Barro < 50 * Math.pow(1.5, buttonsPressed.Barro) || Hierro < 50 * Math.pow(1.5, buttonsPressed.Barro)}> x1.5</button>
  </div>
  <div>
   <img src={HierroImg} alt="Hierro"/>
   <h1>Hierro</h1>
   <p>{3600*Math.pow(1.5, buttonsPressed.Hierro)} /h</p>
-  <p>{Math.floor(Hierro)}</p>
-  <p>Siguiente Nivel: {150*Math.pow(1.5, buttonsPressed.Hierro)}</p>
-  <button onClick={() => handleButtonClick('Hierro')} disabled={Cereal < 150 * Math.pow(1.5, buttonsPressed.Hierro) || Madera < 100 * Math.pow(1.5, buttonsPressed.Hierro) || Barro < 100 * Math.pow(1.5, buttonsPressed.Hierro) || Hierro < 100 * Math.pow(1.5, buttonsPressed.Hierro)}> x 1.5</button>
+  <h3>{Math.floor(Hierro)}</h3>
+  <p>Siguiente Nivel: {Math.floor(50*Math.pow(1.5, buttonsPressed.Hierro))}</p>
+  <button onClick={() => handleButtonClick('Hierro')} disabled={Cereal < 50 * Math.pow(1.5, buttonsPressed.Hierro) || Madera < 50 * Math.pow(1.5, buttonsPressed.Hierro) || Barro < 50 * Math.pow(1.5, buttonsPressed.Hierro) || Hierro < 50 * Math.pow(1.5, buttonsPressed.Hierro)}> x 1.5</button>
  </div>
  <div>
   <img src={CerealImg} alt="Cereal"/>
   <h1>Cereal</h1> 
   <p>{3600*Math.pow(1.5, buttonsPressed.Cereal)} /h</p>
-  <p>{Math.floor(Cereal)}</p>
-  <p>Siguiente Nivel: {150*Math.pow(1.5, buttonsPressed.Cereal)}</p>
-  <button onClick={() => handleButtonClick('Cereal')} disabled={Cereal < 150 * Math.pow(1.5, buttonsPressed.Cereal) || Madera < 100 * Math.pow(1.5, buttonsPressed.Cereal) || Barro < 100 * Math.pow(1.5, buttonsPressed.Cereal) || Hierro < 100 * Math.pow(1.5, buttonsPressed.Cereal)}> x 1.5</button>
+  <h3>{Math.floor(Cereal)}</h3>
+  <p>Siguiente Nivel: {Math.floor(50*Math.pow(1.5, buttonsPressed.Cereal))}</p>
+  <button onClick={() => handleButtonClick('Cereal')} disabled={Cereal < 50 * Math.pow(1.5, buttonsPressed.Cereal) || Madera < 50 * Math.pow(1.5, buttonsPressed.Cereal) || Barro < 50 * Math.pow(1.5, buttonsPressed.Cereal) || Hierro < 50 * Math.pow(1.5, buttonsPressed.Cereal)}> x 1.5</button>
 
  </div>
  </div>
